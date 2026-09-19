@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="icon" href="images/Gym logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b825955621.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="index.html"><img src="images/Gym logo.png" alt="Gold's logo"></a>
+            </div>
+
+            <div>
+                <div class="harmbuger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-items">
+                
+                    <a class="nav-links" href="index.html"><li>Home</li></a>
+                    <a class="nav-links" href="about.html"><li>About</li></a>
+                    <a class="nav-links" href="program.html"><li>Workout Programs</li></a>
+                    <a class="nav-links active" href="recipe.html"><li>Recipes</li></a>
+                    <a class="nav-links" href="store.html"><li>Store</li></a>
+                    <a class="nav-links" href="login.html"><li>Login</li></a>
+                    <a class="nav-links" href="signup.html"><li>Sign up</li></a>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main">
+            <section class="recipes">
+                <div class="merch-navbar">
+                    <h3 class="french-toast-header">Featured Recipes</h3>
+               </div>
+
+               <div class="protein-section">
+                   <div class="protein">
+                        <div class="protein-brief">
+                            <img src="images/recipie-img1.png" alt="">
+                            <div class="protein-details">
+                                <h2 class="protein-header">Protein-packed power bowl</h2>
+                                <p class="protein-text">
+                                A colorful protein-packed power bowl filled with flavorful, 
+                                meaty grilled satay tofu and an array of vibrant veggies on 
+                                a bed of fluffy quinoa. Completed with a healthy and delicious 
+                                satay dipping sauce and crushed roasted peanuts. Delicious!
+                                </p>
+    
+                                <button class="recipe-btn" type="button">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </div>
+                       </div>
+                      
+                       <div class="more-recipies">
+                            <div class="healthy-recipies">
+                                <img src="images/recipie-img2.png" alt="">
+                                <a href="#other-recipes1">High Protein Recipes</a>
+                            </div>
+
+                            <div class="healthy-recipies">
+                                <img src="images/recipie-img3.png" alt="">
+                                <a href="#other-recipes2">Low Crab Recipes</a>
+                            </div>
+
+                            <div class="healthy-recipies">
+                                <img src="images/recipie-img4.png" alt="">
+                                <a href="#other-recipes3">Dairy Free Recipes</a>
+                            </div>
+
+                            <div class="healthy-recipies">
+                                <img src="images/recipie-img5.png" alt="">
+                                <a href="#other-recipes4">Vegetarian Recipes</a>
+                            </div>
+                       </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="other-recipes" id="other-recipes1">
+                <div class="high-protein">
+                    <h3 class="french-toast-header">High Protein Recipes</h3>
+                    <p class="other-recipes-text">
+                        Start your day right with these easy peasy ideas. 
+                        Some can even be prepared ahead of time
+                    </p>
+                </div>
+
+        
+                <div class="slider-img">
+                   <i id="prev-btn" class="navigation-btn fas fa-angle-left fa-3x"></i>
+                    
+                    <div class="recipe-img">
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img9.png" alt="">
+    
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                        
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+    
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img10.png" alt="">
+        
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt=""> 
+                                <p>30-40 mins</p>
+                            </div>
+                            
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+    
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img11.png" alt="">
+        
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                            
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <i id="next-btn" class="navigation-btn fas fa-angle-right fa-3x"></i>
+                    
+                </div>
+            </section>    
+    
+            <section class="other-recipes" id="other-recipes2">
+                <div class="high-protein">
+                    <h3 class="french-toast-header">Low Carb Recipes</h3>
+                    <p class="other-recipes-text">
+                        Start your day right with these easy peasy ideas. 
+                        Some can even be prepared ahead of time
+                    </p>
+                </div>
+
+                <div class="slider-img">
+                    <i id="prev-btn" class="navigation-btn fas fa-angle-left fa-3x"></i>
+                    <div class="recipe-img">
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img12.png" alt="">
+
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                            
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img13.png" alt="">
+    
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                        
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img14.png" alt="">
+    
+                            <div class="timer">
+                            <img src="images/clock-img.png" alt="">
+                            <p>30-40 mins</p>
+                            </div>
+                        
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <i id="next-btn" class="navigation-btn fas fa-angle-right fa-3x"></i>
+                </div>
+            </section>
+
+            <section class="other-recipes" id="other-recipes3">
+                <div class="high-protein">
+                    <h3 class="french-toast-header">Dairy Free Recipes</h3>
+                    <p class="other-recipes-text">
+                        Start your day right with these easy peasy ideas. 
+                        Some can even be prepared ahead of time
+                    </p>
+                </div>
+
+                <div class="slider-img">
+                    <i id="prev-btn" class="navigation-btn fas fa-angle-left fa-3x"></i>
+                    <div class="recipe-img">
+                        <div class="recipe-img1">
+                            <img src="images/recipie-img1.png" alt="">
+     
+                            <div class="timer">
+                               <img src="images/clock-img.png" alt="">
+                               <p>30-40 mins</p>
+                            </div>
+                         
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+     
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img20.png" alt="">
+    
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                        
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+     
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img16.png" alt="">
+    
+                            <div class="timer">
+                            <img src="images/clock-img.png" alt="">
+                            <p>30-40 mins</p>
+                            </div>
+                        
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <i id="next-btn" class="navigation-btn fas fa-angle-right fa-3x"></i>
+                </div>
+            </section>
+
+            <section class="other-recipes" id="other-recipes4">
+                <div class="high-protein">
+                    <h3 class="french-toast-header">Vegetarian Recipes</h3>
+                    <p class="other-recipes-text">
+                        Start your day right with these easy peasy ideas. 
+                        Some can even be prepared ahead of time
+                    </p>
+                </div>
+
+                <div class="slider-img">
+                    <i id="prev-btn" class="navigation-btn fas fa-angle-left fa-3x"></i>
+                    <div class="recipe-img">
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img17.png" alt="">
+     
+                            <div class="timer">
+                               <img src="images/clock-img.png" alt="">
+                               <p>30-40 mins</p>
+                            </div>
+                         
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+     
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img18.png" alt="">
+      
+                            <div class="timer">
+                                <img src="images/clock-img.png" alt="">
+                                <p>30-40 mins</p>
+                            </div>
+                          
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+     
+                        <div class="recipe-img1">
+                            <img src="images/recipe-img19.png" alt="">
+    
+                            <div class="timer">
+                            <img src="images/clock-img.png" alt="">
+                            <p>30-40 mins</p>
+                            </div>
+                          
+                            <a href="taost.html">
+                                <button id="recipe-btn">
+                                    <p>Veiw Full Recipe </p>
+                                    <img src="images/arrow.png" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <i id="next-btn" class="navigation-btn fas fa-angle-right fa-3x"></i>
+                </div>
+            </section>
+
+            <section class="contact">
+                <div class="contact-us">
+                    <h2 class="merch-header">
+                        ///CONTACT US
+                    </h2>
+
+                    <p class="contact-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam
+                    </p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-input">
+                            <input type="text" placeholder="Enter your name"><br>
+                            <input type="email" placeholder="Xyz@gmail.com"><br>
+                            <input type="text" id="input-message" placeholder="Enter your message...">
+                        </div>
+
+                        <img src="images/contact-img.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div class="footer">
+                    <img src="images/logo2.png" alt="Gold's logo">
+                    <p class="footer-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt utfsfbhsrherfhsbfshb.  
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js">
+
+    </script>
+    <script src="script.js">
+      
+    </script>
+</body>
+</html>

@@ -72,15 +72,20 @@ resource "aws_ecs_cluster" "image_cluster" {
   name = "imageCluster"
 }
 
-# Fargate Tasks
-data "aws_ecs_task_definition" "task" {
-  task_definition = "autoship_task"
+resource "aws_ecs_task_definition" "task" {
+  family                   = "autoship_task"
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = "256"
+  memory                   = "512"
+  execution_role_arn       = "arn:aws:iam::463932053173:role/autoship_task"
+  container_definitions    = jsonencode(jsondecode(file("${path.module}/ecs/task-def.json"))["containerDefinitions"])
 }
 
 resource "aws_ecs_service" "service" {
   name = "autoship_service"
   cluster = aws_ecs_cluster.image_cluster.id
-  task_definition = data.aws_ecs_task_definition.task.arn
+  task_definition = aws_ecs_task_definition.task.arn
   desired_count = 1
   launch_type = "FARGATE"
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="images/Gym logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="login">
+        <div class="navbar" id="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="index.html"><img src="images/Gym logo.png" alt="Gold's logo"></a>
+            </div>
+
+            <div>
+                <div class="harmbuger-menu" id="harmbuger-menu">
+                    <div class="bar" id="bar"></div>
+                    <div class="bar" id="bar"></div>
+                    <div class="bar" id="bar"></div>
+                </div>
+                <ul class="nav-items" id="login-nav-items">
+                    <a class="nav-links active" href="index.html"><li>Home</li></a>
+                    <a class="nav-links" href="about.html"><li>About</li></a>
+                    <a class="nav-links" href="program.html"><li>Workout Programs</li></a>
+                    <a class="nav-links" href="recipe.html"><li>Recipes</li></a>
+                    <a class="nav-links" href="store.html"><li>Store</li></a>
+                    <a class="nav-links"  id="active" href="login.html"><li>Login</li></a>
+                    <a class="nav-links" href="signup.html"><li>Sign up</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main"> 
+        <div class="login-hero-scetion">
+            <h1 class="login-header">Welcome Back!</h1>
+            <p class="login-text">Start your fitness journey today</p>
+            <div class="login-hero">
+                <div class="login-hero-col1">
+                    <input type="text" placeholder="Enter your name" id="login-input"><br>
+                    <input type="email" placeholder="xyz@gmail.com" id="login-input"><br>
+                    <input type="text" placeholder="Enter your name" id="login-input"><br>
+                    <div class="checkbox">
+                        <div class="box-btn">
+                            <input type="checkbox" name="" id="checkbox">
+                            
+                            <p>Keep me signed in</p>
+                        </div>
+                        
+                        <a href="">Forget your password?</a>
+                    </div>
+                    <button id="login-btn">
+                        Login
+                    </button><br>
+                    <div class="dash">
+                        <span class="line"></span>  or <span class="line"></span>
+                    </div>
+                   
+                    <!-- <div class="line">
+                        <img src="images/Line 23.png" alt=""> 
+                        <p>or</p>
+                        <img src="images/Line 23.png" alt="">
+                    </div> -->
+                     
+                    <button id="login-input" class="Google-btn">
+                        <img src="images/goggle-logo.png" alt=""> 
+                        <p>Login with Google</p>
+                    </button>
+                    <p class="terms">By signing up, you agree to the Terms & Conditions and Privacy Policy</p>
+                    
+                </div>
+    
+                <div class="col2">
+                    <img src="images/contact-img.png" alt="">
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+    <script src="script.js">
+      
+    </script>
+</body>
+</html>

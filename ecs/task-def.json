@@ -1,0 +1,18 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "autoship",
+            "image": "463932053173.dkr.ecr.us-east-1.amazonaws.com/image-registry:latest",
+            "essential": true,
+            "memory": 512,
+            "cpu": 256,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ]
+}
