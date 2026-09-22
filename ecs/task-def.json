@@ -1,4 +1,5 @@
 {
+    "family": "autoship-task",
     "containerDefinitions": [
         {
             "name": "autoship",
