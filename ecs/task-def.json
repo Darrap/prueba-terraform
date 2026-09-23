@@ -6,7 +6,7 @@
     ],
     "cpu": "256",
     "memory": "512",
-    "executionRoleArn": "arn:aws:iam::463932053173:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::463932053173:role/autoship_task",
     "containerDefinitions": [
         {
             "name": "autoship",
