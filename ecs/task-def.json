@@ -1,11 +1,12 @@
 {
     "family": "autoship-task",
+    "networkMode": "awsvpc",
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "networkMode": "awsvpc",
     "cpu": "256",
     "memory": "512",
+    "executionRoleArn": "arn:aws:iam::463932053173:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "name": "autoship",
