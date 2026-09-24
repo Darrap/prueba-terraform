@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest # This is github runner operating system
     environment: development
 
-    env:
+   env:
       AWS_REGION: ${{ vars.AWS_REGION }}
       ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
       CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
