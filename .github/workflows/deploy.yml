@@ -88,12 +88,4 @@ jobs:
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true 
 
-    # Notify team on slack
-    - name: Notify slack
-      uses: slackapi/slack-github-action@v1.23.0
-      with:
-        channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
-        payload: '{"text": "GoldGym Application successfully deployed"}'
-      env:
-        # SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN}}
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    
