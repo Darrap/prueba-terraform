@@ -69,7 +69,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    # Update ECS task definition with new image
+   # Update ECS task definition with new image
     - name: Add the new image ID in  ECS task definition
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -79,11 +79,11 @@ jobs:
         image: ${{ steps.build-image.outputs.image }}
       
     # Deploy updated task definition to ECS service
-- name: Deploy to task definition to Amazon ECS service
-  uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-  with:
-    task-definition: ${{ steps.task-def.outputs.task-definition }}
-    service: autoship_service
-    cluster: imageCluster
-    wait-for-service-stability: true
+    - name: Deploy to task definition to Amazon ECS service
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service: autoship_service
+        cluster: imageCluster
+        wait-for-service-stability: true
     
