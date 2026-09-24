@@ -18,11 +18,11 @@ jobs:
     environment: development
 
     env:
-      AWS_REGION: ${{ vars.AWS_REGION }}
-      ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
-      CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
-      ECS_SERVICE: ${{ vars.ECS_SERVICE }}
-      ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}
+      AWS_REGION: us-east-1
+      ECR_REPOSITORY: image-registry
+      CONTAINER_NAME: autoship
+      ECS_SERVICE: autoship_service
+      ECS_CLUSTER: imageCluster
       
     steps:
     # This checkout the code for any error
