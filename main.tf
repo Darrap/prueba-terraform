@@ -57,6 +57,11 @@ resource "aws_route_table_association" "public_route_table1" {
   subnet_id = aws_subnet.public_subnet1.id
 }
 
+resource "aws_route_table_association" "public_route_table2" {
+  route_table_id = aws_route_table.route_table.id
+  subnet_id = aws_subnet.public_subnet2.id
+}
+
 resource "aws_ecr_repository" "image_registry" {
   name                 = "image-registry"
   image_tag_mutability = "MUTABLE"
