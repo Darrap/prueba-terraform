@@ -1,13 +1,11 @@
 name: Deploy to Amazon ECS (FARGATE)
 
-# Triggers workflow
 on:
   push:
     branches: [ "main" ]
   pull_request: 
     branches: [ "main" ]
 
-# 1. Este permiso es obligatorio para que OIDC funcione con AWS
 permissions:
   id-token: write
   contents: read
@@ -15,7 +13,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy
-    runs-on: ubuntu-latest # This is github runner operating system
+    runs-on: ubuntu-latest
     environment: development
 
     env:
@@ -24,15 +22,12 @@ jobs:
       CONTAINER_NAME: autoship
       ECS_SERVICE: autoship_service
       ECS_CLUSTER: imageCluster
-      # 2. Pega aquí el ARN de tu rol de IAM recién creado
       AWS_ROLE_ARN: "arn:aws:iam::463932053173:role/github-actions-ecs-role"
       
     steps:
-    # This checkout the code for any error
     - name: Checkout
       uses: actions/checkout@v4
 
-    # 3. Configurar credenciales usando OIDC (Adiós claves estáticas)
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
@@ -40,12 +35,10 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
         role-session-name: GitHubActionsSession
 
-    # Login to ECR so docker can push images
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    # Build, tag and push image to ECR
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
@@ -55,25 +48,21 @@ jobs:
       run: |
         set -euo pipefail
         
-        # check that the required envirionment are set
         : "${ECR_REGISTRY:?ECR_REGISTRY is not set}"
         : "${ECR_REPOSITORY:?ECR_REPOSITORY is not set}"
         : "${IMAGE_TAG:?IMAGE_TAG is not set}"
 
-        # Trim any whitespace
         ECR_REGISTRY=$(echo "$ECR_REGISTRY" | xargs)
         ECR_REPOSITORY=$(echo "$ECR_REPOSITORY" | xargs)
         IMAGE_TAG=$(echo "$IMAGE_TAG" | xargs)
 
-        # Build a docker container and push it to ECR so that it can be deployed to ECS.
         echo "Building Docker image..."
         docker build -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" -f Dockerfile .
         echo "Pushing Docker images to ECR"
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-   # Update ECS task definition with new image
-    - name: Add the new image ID in  ECS task definition
+    - name: Add the new image ID in ECS task definition
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
@@ -81,7 +70,6 @@ jobs:
         container-name: ${{ env.CONTAINER_NAME }}
         image: ${{ steps.build-image.outputs.image }}
       
-    # Deploy updated task definition to ECS service
     - name: Deploy to task definition to Amazon ECS service
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
