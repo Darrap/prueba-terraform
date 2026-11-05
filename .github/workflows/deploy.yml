@@ -14,7 +14,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-   # environment: development
 
     env:
       AWS_REGION: us-east-1
@@ -35,18 +34,12 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
         role-session-name: GitHubActionsSession
 
-    # --- NUEVO PASO DE VALIDACIÓN DE SECRETS MANAGER ---
     - name: Validate AWS Secrets Manager via OIDC
       run: |
         echo "Consultando el secreto en AWS Secrets Manager..."
-        
-        # Obtenemos el secreto usando la autenticación OIDC activa
         SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id "test/conexion-exitosa" --query SecretString --output text)
-        
-        # Extraemos la llave "saludo" que creaste con jq
         MENSAJE=$(echo "$SECRET_JSON" | jq -r '.saludo')
         
-        # Verificamos que se haya leído correctamente
         if [ -n "$MENSAJE" ] && [ "$MENSAJE" != "null" ]; then
           echo "¡ÉXITO! Secreto leído correctamente desde AWS."
           echo "Contenido del secreto: $MENSAJE"
@@ -54,7 +47,6 @@ jobs:
           echo "¡ERROR! No se pudo leer el contenido del secreto."
           exit 1
         fi
-    # --------------------------------------------------
 
     - name: Login to Amazon ECR
       id: login-ecr
