@@ -37,7 +37,7 @@ jobs:
     - name: Validate AWS Secrets Manager via OIDC
       run: |
         echo "Consultando el secreto en AWS Secrets Manager..."
-        SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id "test/conexion-exitosa" --query SecretString --output text)
+        SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id "arn:aws:secretsmanager:us-east-1:463932053173:secret:test/conexion-exitosa-0DN09m" --query SecretString --output text)
         MENSAJE=$(echo "$SECRET_JSON" | jq -r '.saludo')
         
         if [ -n "$MENSAJE" ] && [ "$MENSAJE" != "null" ]; then

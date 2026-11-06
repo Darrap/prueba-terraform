@@ -211,3 +211,25 @@ resource "aws_appautoscaling_target" "autoscale" {
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace = "ecs"
 }
+
+resource "aws_iam_policy" "secrets_manager_policy" {
+  name        = "github-actions-secrets-policy"
+  description = "Permite leer el secreto de prueba en Secrets Manager"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "secretsmanager:GetSecretValue"
+        Resource = "arn:aws:secretsmanager:us-east-1:463932053173:secret:test/conexion-exitosa-0DN09m"
+      }
+    ]
+  })
+}
+
+# Asocia la política al rol que ya tienes creado
+resource "aws_iam_role_policy_attachment" "attach_secrets" {
+  role       = "github-actions-ecs-role"
+  policy_arn = aws_iam_policy.secrets_manager_policy.arn
+}
