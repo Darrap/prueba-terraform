@@ -46,13 +46,14 @@ jobs:
           exit 1
         fi
 
-        MENSAJE=$(echo "$SECRET_JSON" | jq -r '.saludo // empty')
+        # Extraemos buscando la clave 'saludo' de forma flexible (ignorando espacios)
+        MENSAJE=$(echo "$SECRET_JSON" | jq -r 'to_entries[] | select(.key | ascii_downcase | gsub(" "; "") == "saludo") | .value')
         
-        if [ -n "$MENSAJE" ]; then
+        if [ -n "$MENSAJE" ] && [ "$MENSAJE" != "null" ]; then
           echo "¡ÉXITO! Secreto leído correctamente desde AWS."
           echo "Contenido del secreto: $MENSAJE"
         else
-          echo "¡ERROR! El secreto se leyó pero no contiene la llave 'saludo' o está vacío."
+          echo "¡ERROR! No se pudo extraer la clave del JSON."
           echo "Valor obtenido: $SECRET_JSON"
           exit 1
         fi
